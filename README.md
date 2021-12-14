@@ -1,6 +1,5 @@
 # BOOST_SERVER_EXAMPLE_TASK
-This is a simple example that consists of a simple tcp client server with one way message transfer through **boost::asio::ip::tcp** socket.
-
+This is a simple example that consists of a simple tcp client & server with one way message transfer using **boost::asio::ip::tcp** socket.
 
 #### how to build
 1. If you are on Linux, have g++-9, also [conan package manager](https://docs.conan.io/en/latest/installation.html) and [CMake](https://cgold.readthedocs.io/en/latest/first-step/installation.html), just running ./build.sh script should work.
