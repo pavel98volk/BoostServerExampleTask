@@ -1,5 +1,5 @@
-#BOOST_SERVER_EXAMPLE_TASK
-This is the simple example, containing a simple tcp client and a TCP server with one way message transfer through TCP socket.
+# BOOST_SERVER_EXAMPLE_TASK
+This is a simple example that consists of a simple tcp client server with one way message transfer through **boost::asio::ip::tcp** socket.
 
 
 #### how to build
