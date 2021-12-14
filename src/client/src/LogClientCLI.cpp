@@ -25,8 +25,13 @@ void LogClientCLI::send_message(std::string message){
     std::string x;
     std::string recepient_address = socket_.remote_endpoint().address().to_string() + ":" + std::to_string(socket_.remote_endpoint().port());
     try{
-    boost::asio::write(socket_,boost::asio::buffer(message.c_str(), message.size()));
-        
+    if(message.size() > 0xFFFF){
+        throw std::invalid_argument("Message length should not exceed 0xFFFF");
+    }
+    uint16_t short_size  = message.size();
+    boost::asio::write(socket_,boost::asio::buffer((char*)&short_size, 2));
+    boost::asio::write(socket_,boost::asio::buffer(message.c_str(), short_size));
+    
     std::string output = "Message sent to ";
     output += recepient_address;
     output += " with data: ";

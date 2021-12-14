@@ -17,11 +17,14 @@ public:
   void start();
 
 private:
+  void read_message_size();
   void read_message();
 
 
   tcp::socket socket_;
-  static const int BUFFER_SIZE = 1024;
+  static const int BUFFER_SIZE = 0x10000;
+  unsigned short next_message_size_;
   char buffer_[BUFFER_SIZE];
   boost::asio::streambuf s_buf_;
+  
 };
