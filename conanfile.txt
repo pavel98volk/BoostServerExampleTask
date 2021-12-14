@@ -1,0 +1,6 @@
+[requires]
+boost/1.77.0
+# other libs...
+
+[generators]
+cmake
